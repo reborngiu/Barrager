@@ -1,0 +1,32 @@
+body{
+	text-align: center;
+}
+
+.show{
+	border:1px solid #ccc;
+	width: 70%;
+	height: 300px;
+	margin:20px auto;
+	border-radius: 5px;
+}
+
+.send{
+	margin:0 auto;
+}
+
+.send input{
+    width:400px;
+    height:35px;
+    border-radius: 5px;
+    padding: 5px;
+    border:1px solid #ccc;
+}
+
+.send button{
+    margin:20px 20px;
+    padding:5px 50px;
+    border:1px solid #ff3333;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff3333;
+}
