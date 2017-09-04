@@ -35,10 +35,10 @@ $(document).ready(function() {
 
     var createScreenbullet=function(jqueryDom){
         var fontColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random()*256) + ")";
-        var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
-        var left = $(".show").width()+320 + "px";
+        var fontSize = Math.floor((Math.random() + 1) * 20) + "px";
+        var left = $(".show").width()+100 + "px";
         var top = Math.floor(Math.random() * 301) + "px";
-        top = parseInt(top) > 380 ? "380px" : top;
+        top = parseInt(top) > 520 ? "520px" : top;
         top = parseInt(top) < 80 ? "80px" : top;
         jqueryDom.css({
             "position": 'absolute',
@@ -56,7 +56,7 @@ $(document).ready(function() {
         var timer = setInterval(function () {
             left--;
             jqueryDom.css("left", left + "px");
-            if (jqueryDom.offset().left + jqueryDom.width()-90 < $(".show").offset().left) {
+            if (jqueryDom.offset().left < $(".show").offset().left+15) {
                 jqueryDom.remove();              //到达墙最左边后移除弹幕
                 clearInterval(timer);
             }
@@ -71,7 +71,7 @@ $(document).ready(function() {
             createScreenbullet(jqueryDom);
             addInterval(jqueryDom);
         }
-        setTimeout(getRun,3000);    //设定每隔三秒调用一次getRun方法，使放在arr数组中的一个弹幕显示出来
+        setTimeout(getRun,2500);    //设定每隔三秒调用一次getRun方法，使放在arr数组中的一个弹幕显示出来
     }
 
     jQuery.fx.interval = 50;
