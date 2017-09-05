@@ -33,18 +33,17 @@ function createScreenbullet(text) {
         "font-size": fontSize,
         "left": left,
         "top": top
-    });
     $(".show").append(jqueryDom);
     return jqueryDom;
 }
 // 为弹幕添加定时任务
 function addInterval(jqueryDom) {
-    var left = jqueryDom.offset().left - $(".show").offset().left;
+    var left = jqueryDom.offset().left - $(".show").offset().left;  //使left为负值
     var timer = setInterval(function () {
         left--;
         jqueryDom.css("left", left + "px");
         if (jqueryDom.offset().left + jqueryDom.width() < $(".show").offset().left) {
-            jqueryDom.remove();
+            jqueryDom.remove();              //到达墙最左边后移除弹幕
             clearInterval(timer);
         }
     }, 10);
